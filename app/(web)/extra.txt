@@ -1,0 +1,25 @@
+    // <div classNameName="flex overflow-x-auto overflow-y-auto">
+    //   <div>
+    //     <div classNameName="bg-red-600 w-[100px] h-[8px] rounded-xl mt-28" />
+    //     <h1 classNameName="text-6xl font-poppins text-[#4A4A4A] font-semibold mt-2">
+    //       Mast Logon Ka
+    //     </h1>
+    //     <h1 classNameName="mt-2 text-6xl font-poppins text-[#4A4A4A] font-semibold">
+    //       Mast Station
+    //     </h1>
+    //     <p classNameName="w-1/2 text-justify mt-2">
+    //       Mast FM or FM 103 is a Pakistani radio channel broadcast from the
+    //       Pakistan with the frequency 103 MHz. It is a music radio station in
+    //       Pakistan. It also broadcasts some shows by its hosts, in which they
+    //       discuss specific topics. In the shows guests are also invited to the
+    //       show for questioning and answering.
+    //     </p>
+    //     <Button classNameName="rounded-xl mt-4 bg-red-700 mb-32">
+    //       Learn More
+    //       <MoveRight size={20} classNameName="ml-2" />
+    //     </Button>
+    //   </div>
+    //   <div classNameName="flex justify-center items-center mr-36">
+    //     <Lottie animationData={rqmrxV1tzj} loop={true}classNameName="h-96 w-96" />
+    //   </div>
+    // </div>
