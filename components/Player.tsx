@@ -98,23 +98,24 @@ const Player: React.FC = () => {
   }, [currentTrack, isPlaying]);
 
   return (
-    <div className="fixed bottom-0  sm:w-full lg:w-2/3 text-black mt-4 flex items-center justify-around">
-      <audio
-        ref={audioRef}
-        src={tracks[currentTrack]}
-        onTimeUpdate={handleTimeUpdate}
-        onEnded={handleForward}
-      />
-      <button onClick={playPauseToggle} className="ml-10 mb-4">
-        {isPlaying ? (
-          <PauseCircleIcon className="h-10 w-10 text-blue-600" />
-        ) : (
-          <PlayCircleIcon className="h-10 w-10 text-blue-600" />
-        )}
-      </button>
-
+    <div className="fixed bottom-0 sm:w-full lg:w-2/3 text-black mt-4 flex items-center justify-around">
+      <div className="flex items-center">
+        <button onClick={handleBackward}>
+          <ChevronLeft className="lg:h-10 lg:w-10 xs:h-6 xs:h-6 mb-2 lg:ml-10 ml-10" />
+        </button>
+        <button onClick={playPauseToggle} className="mb-2">
+          {isPlaying ? (
+            <PauseCircleIcon className="xl:h-10 xl:w-10 xs:h-8 xs:w-8 text-blue-600" />
+          ) : (
+            <PlayCircleIcon className="xl:h-10 xl:w-10 xs:h-8 xs:w-8 text-blue-600" />
+          )}
+        </button>
+        <button onClick={handleForward}>
+          <ChevronRight className="lg:h-10 lg:w-10 xs:h-6 xs:h-6 mb-2" />
+        </button>
+      </div>
       <div className="flex-1 mx-4">
-        <div>{currentTrack}</div>
+        <div className="text-sm">{currentTrack}</div>
         <input
           type="range"
           value={currentTime}
@@ -123,17 +124,11 @@ const Player: React.FC = () => {
           className="w-full"
         />
         <div className="flex justify-between">
-          <span>{formatTime(currentTime)}</span>
+          <span className="text-sm">{formatTime(currentTime)}</span>
         </div>
       </div>
-      <button onClick={handleBackward}>
-        <ChevronLeft className="h-10 w-10 mb-4" />
-      </button>
-      <button onClick={handleForward}>
-        <ChevronRight className="h-10 w-10 mb-4" />
-      </button>
-      <div className="flex items-center mb-4">
-        <Volume1Icon className="h-6 w-6 mr-2" />
+      <div className="flex items-center mb-2">
+        <Volume1Icon className="lg:h-8 lg:w-8 xs:h-6 xs:h-6 mr-2" />
         <input
           type="range"
           value={volume}
@@ -143,8 +138,14 @@ const Player: React.FC = () => {
           onChange={handleVolumeChange}
           className="w-16"
         />
-        <Volume2Icon className="h-6 w-6 ml-2" />
+        <Volume2Icon className="lg:h-8 lg:w-8 xs:h-6 xs:h-6 ml-2" />
       </div>
+      <audio
+        ref={audioRef}
+        src={tracks[currentTrack]}
+        onTimeUpdate={handleTimeUpdate}
+        onEnded={handleForward}
+      />
     </div>
   );
 };

@@ -15,7 +15,7 @@ const radioRoutes = [
   {
     icon: Music,
     label: "On Air",
-    href: "/on-air",
+    href: "/on-air/lahore",
   },
   {
     icon: Library,
